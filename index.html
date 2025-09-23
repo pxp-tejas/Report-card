@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Report Card</title>
+  <link rel="stylesheet" href="/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="report.css">
+</head>
+<body class="bg-light">
+
+<div class="container py-5 d-flex flex-column align-items-center justify-content-center min-vh-100">
+  <div class="card shadow-lg mb-4" style="max-width: 430px; width: 100%;">
+    <div class="card-header bg-primary text-white text-center rounded-top">
+      <h2 class="mb-0">Report Card</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="mb-3 text-secondary">Enter Student Details</h5>
+      <div class="mb-3">
+        <input type="text" id="studentName" class="form-control form-control-lg" placeholder="Student Name">
+      </div>
+      <div class="mb-3">
+        <input type="number" id="maths" class="form-control form-control-lg" placeholder="Maths Marks">
+      </div>
+      <div class="mb-3">
+        <input type="number" id="science" class="form-control form-control-lg" placeholder="Science Marks">
+      </div>
+      <div class="mb-3">
+        <input type="number" id="english" class="form-control form-control-lg" placeholder="English Marks">
+      </div>
+      <div class="mb-3">
+        <input type="number" id="history" class="form-control form-control-lg" placeholder="History Marks">
+      </div>
+      <div class="mb-3">
+        <input type="number" id="geography" class="form-control form-control-lg" placeholder="Geography Marks">
+      </div>
+      <button class="btn btn-calculate w-100 py-2 fs-5" onclick="generateReport()">Generate Report</button>
+    </div>
+  </div>
+
+  <div class="card shadow-lg" id="reportCard" style="max-width: 430px; width: 100%; display:none;">
+    <div class="card-header bg-success text-white text-center rounded-top">
+      <h4 class="mb-0">Report Card</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush mb-3">
+  <li class="list-group-item d-flex justify-content-between"><b>Name:</b> <span id="rName"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Maths:</b> <span id="rMaths"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Science:</b> <span id="rScience"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>English:</b> <span id="rEnglish"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>History:</b> <span id="rHistory"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Geography:</b> <span id="rComputer"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Total Marks:</b> <span id="rTotal"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Percentage:</b> <span id="rAverage"></span></li>
+  <li class="list-group-item d-flex justify-content-between"><b>Result:</b> <span id="rResult"></span></li>
+      </ul>
+      <button class="btn btn-reset w-100" onclick="location.reload()">Reset</button>
+    </div>
+  </div>
+</div>
+
+<script src="report.js"></script>
+</body>
+</html>

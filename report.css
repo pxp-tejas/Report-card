@@ -1,0 +1,138 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+
+.card {
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  border: none;
+  background: #fff;
+}
+.card-header {
+  background: linear-gradient(90deg, #4f8cff 60%, #2563eb 100%);
+  color: #fff;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}   
+.card-body {
+  padding: 2rem 1.5rem;
+}
+
+.list-group-item {
+  background: #f8fafc;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 8px !important;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+.table th {
+  background-color: #f1f5f9;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9fafb;
+}
+.btn-calculate {
+  background: linear-gradient(90deg, #4f8cff 60%, #2563eb 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.btn-calculate:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.btn-reset {
+  background: linear-gradient(90deg, #f87171 60%, #dc2626 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-reset:hover {
+  background: #dc2626;
+  color: #fff;
+}
+.result {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+}
+.result.pass {
+  color: #16a34a;
+}
+.result.fail {
+  color: #dc2626;
+}
+.alert {
+  margin-top: 1rem;
+}
+.alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.alert-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1rem 0.5rem;
+  }
+  .list-group-item {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  .table th, .table td {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+@media (min-width: 769px) {
+  .card-body {
+    padding: 2rem;
+  }
+  .table th, .table td {
+    font-size: 1.1rem;
+  }
+  .btn {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+
+
