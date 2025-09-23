@@ -20,7 +20,7 @@ function generateReport() {
   document.getElementById("rScience").innerText = science;
   document.getElementById("rEnglish").innerText = english;
   document.getElementById("rHistory").innerText = history;
-  document.getElementById("rComputer").innerText = geography;
+  document.getElementById("rGeography").innerText = geography;
   document.getElementById("rTotal").innerText = total;
   document.getElementById("rAverage").innerText = percentage + "%";
   document.getElementById("rResult").innerText = result;
