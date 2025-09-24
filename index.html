@@ -9,52 +9,125 @@
 </head>
 <body class="bg-light">
 
+
 <div class="container py-5 d-flex flex-column align-items-center justify-content-center min-vh-100">
-  <div class="card shadow-lg mb-4" style="max-width: 430px; width: 100%;">
-    <div class="card-header bg-primary text-white text-center rounded-top">
-      <h2 class="mb-0">Report Card</h2>
-    </div>
+  <!-- University Marksheet Header -->
+  <div class="text-center mb-4">
+  <img src="sbjitlogof4.png" alt="University Logo" style="width: 90px; height: 90px; object-fit:contain; border-radius:50%; border:2.5px solid #333; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,0.10); margin-bottom:10px;">
+    <h2 class="fw-bold mt-2 mb-0" style="letter-spacing:1px; font-family:serif;">S. B. Jain Institute of Technology ,Management & Reseach ,Nagpur</h2>
+    <div class="text-secondary" style="font-size:1.1rem;">An Autonomous Institute| Affilated to Rashtrasant Tukdoji Maharaj Nagpur University, Nagpur</div>
+    <div class="fw-semibold mt-2" style="font-size:1.2rem; letter-spacing:0.5px;">Semester Examination Marksheet</div>
+    <hr class="my-3" style="border-top:2px solid #333; width:100%; max-width:500px; margin:auto;">
+  </div>
+  <!-- Student Details Form -->
+  <div class="card shadow-sm mb-4" style="max-width: 520px; width: 100%;">
     <div class="card-body">
-      <h5 class="mb-3 text-secondary">Enter Student Details</h5>
-      <div class="mb-3">
-        <input type="text" id="studentName" class="form-control form-control-lg" placeholder="Student Name">
+      <div class="row mb-3">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <input type="text" id="studentName" class="form-control form-control-lg" placeholder="Student Name">
+        </div>
+        <div class="col-md-6">
+          <input type="text" id="rollNumber" class="form-control form-control-lg" placeholder="Roll Number">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <input type="number" id="maths" class="form-control form-control-lg" placeholder="Engineering Mathematics">
+        </div>
+        <div class="col-md-6">
+          <input type="number" id="science" class="form-control form-control-lg" placeholder="Engineering Chemistry">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <input type="number" id="english" class="form-control form-control-lg" placeholder="Engineering Mathematics Lab">
+        </div>
+        <div class="col-md-6">
+          <input type="number" id="history" class="form-control form-control-lg" placeholder="Engineering Chemistry Lab">
+        </div>
       </div>
       <div class="mb-3">
-        <input type="number" id="maths" class="form-control form-control-lg" placeholder="Maths Marks">
+        <input type="number" id="geography" class="form-control form-control-lg" placeholder="Engineering Graphics and Design">
       </div>
       <div class="mb-3">
-        <input type="number" id="science" class="form-control form-control-lg" placeholder="Science Marks">
+        <input type="number" id="programming" class="form-control form-control-lg" placeholder="Programming for Problem Solving">
       </div>
       <div class="mb-3">
-        <input type="number" id="english" class="form-control form-control-lg" placeholder="English Marks">
+        <input type="number" id="english2" class="form-control form-control-lg" placeholder="Communicative English">
       </div>
-      <div class="mb-3">
-        <input type="number" id="history" class="form-control form-control-lg" placeholder="History Marks">
-      </div>
-      <div class="mb-3">
-        <input type="number" id="geography" class="form-control form-control-lg" placeholder="Geography Marks">
-      </div>
-      <button class="btn btn-calculate w-100 py-2 fs-5" onclick="generateReport()">Generate Report</button>
+      <button class="btn btn-primary w-100 py-2 fs-5" onclick="generateReport()">Generate Marksheet</button>
     </div>
   </div>
 
-  <div class="card shadow-lg" id="reportCard" style="max-width: 430px; width: 100%; display:none;">
-    <div class="card-header bg-success text-white text-center rounded-top">
-      <h4 class="mb-0">Report Card</h4>
-    </div>
-    <div class="card-body">
-      <ul class="list-group list-group-flush mb-3">
-  <li class="list-group-item d-flex justify-content-between"><b>Name:</b> <span id="rName"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Maths:</b> <span id="rMaths"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Science:</b> <span id="rScience"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>English:</b> <span id="rEnglish"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>History:</b> <span id="rHistory"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Geography:</b> <span id="rGeography"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Total Marks:</b> <span id="rTotal"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Percentage:</b> <span id="rAverage"></span></li>
-  <li class="list-group-item d-flex justify-content-between"><b>Result:</b> <span id="rResult"></span></li>
-      </ul>
-      <button class="btn btn-reset w-100" onclick="location.reload()">Reset</button>
+  <!-- Marksheet Display -->
+  <div class="card shadow-lg" id="reportCard" style="max-width: 650px; width: 100%; display:none; border:2px solid #333;">
+    <div class="card-body p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <span class="fw-bold">Name:</span> <span id="rName"></span><br>
+          <span class="fw-bold">Roll No:</span> <span id="rRoll"></span>
+        </div>
+        <div class="text-end">
+          <span class="fw-bold">Semester:</span> <span>II</span><br>
+          <span class="fw-bold">Year:</span> <span>2025</span>
+        </div>
+      </div>
+      <table class="table table-bordered text-center align-middle mb-4" style="font-size:1.15rem;">
+        <thead class="table-light">
+          <tr>
+            <th>Subject</th>
+            <th>Marks Obtained</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engineering Mathematics</td>
+            <td id="rEngineering Mathematics"></td>
+          </tr>
+          <tr>
+            <td>Engineering Chemistry</td>
+            <td id="rEngineering Chemistry"></td>
+          </tr>
+          <tr>
+            <td>Engineering Mathematics Lab</td>
+            <td id="rEngineering Mathematics Lab"></td>
+          </tr>
+          <tr>
+            <td>Engineering Chemistry Lab</td>
+            <td id="rEngineering Chemistry Lab"></td>
+          </tr>
+          <tr>
+            <td>Engineering Graphics and Design</td>
+            <td id="rEngineering Graphics and Design"></td>
+          </tr>
+          <tr>
+            <td>Programming for Problem Solving</td>
+            <td id="rProgramming for Problem Solving"></td>
+          </tr>
+          <tr>
+            <td>Communicative English</td>
+            <td id="rCommunicative English"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="table-secondary">
+            <th>Total</th>
+            <th id="rTotal"></th>
+          </tr>
+          <tr class="table-secondary">
+            <th>Percentage</th>
+            <th id="rAverage"></th>
+          </tr>
+          <tr class="table-secondary">
+            <th>Result</th>
+            <th id="rResult"></th>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="text-end mt-4">
+        <span class="fw-semibold" style="font-family:serif;">Controller of Examinations</span>
+      </div>
+      <button class="btn btn-outline-secondary w-100 mt-4" onclick="location.reload()">Reset</button>
     </div>
   </div>
 </div>
