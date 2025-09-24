@@ -1,32 +1,32 @@
 function generateReport() {
   let name = document.getElementById("studentName").value;
   let roll = document.getElementById("rollNumber").value;
-  let maths = Number(document.getElementById("maths").value);
-  let science = Number(document.getElementById("science").value);
-  let english = Number(document.getElementById("english").value);
-  let history = Number(document.getElementById("history").value);
-  let geography = Number(document.getElementById("geography").value);
-  let programming = Number(document.getElementById("programming").value);
-  let english2 = Number(document.getElementById("english2").value);
+  let engMath = Number(document.getElementById("Engineering Mathematics").value);
+  let engChem = Number(document.getElementById(" Engineering Chemistry").value);
+  let engMathLab = Number(document.getElementById("Engineering Mathematics Lab").value);
+  let engChemLab = Number(document.getElementById("Engineering Chemistry Lab").value);
+  let engGraphics = Number(document.getElementById("Engineering Graphics and Design").value);
+  let programming = Number(document.getElementById("Programming for Problem Solving").value);
+  let commEnglish = Number(document.getElementById("Communicative English").value);
 
-  if (!name || !roll || isNaN(maths) || isNaN(science) || isNaN(english) || isNaN(history) || isNaN(geography) || isNaN(programming) || isNaN(english2)) {
+  if (!name || !roll || isNaN(engMath) || isNaN(engChem) || isNaN(engMathLab) || isNaN(engChemLab) || isNaN(engGraphics) || isNaN(programming) || isNaN(commEnglish)) {
     alert("Please fill all fields correctly");
     return;
   }
 
-  let total = maths + science + english + history + geography + programming + english2;
+  let total = engMath + engChem + engMathLab + engChemLab + engGraphics + programming + commEnglish;
   let percentage = (total / 7).toFixed(2);
-  let result = (maths >= 35 && science >= 35 && english >= 35 && history >= 35 && geography >= 35 && programming >= 35 && english2 >= 35) ? "PASS" : "FAIL";
+  let result = (engMath >= 35 && engChem >= 35 && engMathLab >= 35 && engChemLab >= 35 && engGraphics >= 35 && programming >= 35 && commEnglish >= 35) ? "PASS" : "FAIL";
 
   document.getElementById("rName").innerText = name;
   document.getElementById("rRoll").innerText = roll;
-  document.getElementById("rMaths").innerText = maths;
-  document.getElementById("rScience").innerText = science;
-  document.getElementById("rEnglish").innerText = english;
-  document.getElementById("rHistory").innerText = history;
-  document.getElementById("rGeography").innerText = geography;
-  document.getElementById("rProgramming").innerText = programming;
-  document.getElementById("rEnglish2").innerText = english2;
+  document.getElementById("rEngineering Mathematics").innerText = engMath;
+  document.getElementById("rEngineering Chemistry").innerText = engChem;
+  document.getElementById("rEngineering Mathematics Lab").innerText = engMathLab;
+  document.getElementById("rEngineering Chemistry Lab").innerText = engChemLab;
+  document.getElementById("rEngineering Graphics and Design").innerText = engGraphics;
+  document.getElementById("rProgramming for Problem Solving").innerText = programming;
+  document.getElementById("rCommunicative English").innerText = commEnglish;
   document.getElementById("rTotal").innerText = total;
   document.getElementById("rAverage").innerText = percentage + "%";
   document.getElementById("rResult").innerText = result;
